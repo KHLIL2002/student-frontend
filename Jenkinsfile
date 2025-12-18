@@ -53,11 +53,10 @@ pipeline {
             steps {
                 withCredentials([file(credentialsId: 'k8s-confi', variable: 'KUBECONFIG')]) {
                     script {
-                       sh "kubectl apply -f STUDENT-MANAGAMENET-FRONT/k8s/angular-deployment.yaml -n ${K8S_NAMESPACE}"
+                       sh "kubectl apply -f student-management-front/k8s/angular-deployment.yaml -n ${K8S_NAMESPACE}"
                        sh "kubectl rollout restart deployment/angular-app -n ${K8S_NAMESPACE}"
                    }
                 }
            }
        }
-    }
 }
