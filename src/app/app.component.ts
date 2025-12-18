@@ -13,8 +13,8 @@ import { Department } from './department.model';
 })
 export class AppComponent implements OnInit {
   // L'URL de ton Backend (via le tunnel)
-  private apiUrl = 'http://localhost:8081/student/Depatment';
-  
+// Change this line:
+private apiUrl = 'http://192.168.21.129:30008/student/Depatment';  
   departments: Department[] = [];
   newDepartment: Department = { name: '', location: '', phone: '', head: '' };
 
