@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        nodejs 'node18'  // Le nom que tu as mis dans l'étape 3
+        nodejs 'node20'  // Le nom que tu as mis dans l'étape 3
     }
 
     environment {
