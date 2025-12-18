@@ -51,7 +51,7 @@ pipeline {
 
        stage('Deploy to Kubernetes') {
             steps {
-                withCredentials([file(credentialsId: 'k8s-config', variable: 'KUBECONFIG')]) {
+                withCredentials([file(credentialsId: 'k8s-confi', variable: 'KUBECONFIG')]) {
                     script {
                        sh "kubectl apply -f k8s/angular-deployment.yaml -n ${K8S_NAMESPACE}"
                        sh "kubectl rollout restart deployment/angular-app -n ${K8S_NAMESPACE}"
