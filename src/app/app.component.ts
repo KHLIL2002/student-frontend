@@ -26,13 +26,17 @@ private apiUrl = 'http://192.168.21.129:30008/student/Depatment';
 
   // Récupérer la liste
   getAllDepartments() {
-    this.http.get<Department[]>(`${this.apiUrl}/getAllDepartment`)
-      .subscribe(data => {
+  this.http.get<Department[]>(`${this.apiUrl}/getAllDepartment`)
+    .subscribe({
+      next: (data) => {
+        console.log("Data received inside Angular:", data);
         this.departments = data;
-      }, error => {
-        console.error('Erreur API:', error);
-      });
-  }
+      },
+      error: (err) => {
+        console.error("API Error:", err);
+      }
+    });
+}
 
   // Ajouter un département
   addDepartment() {
